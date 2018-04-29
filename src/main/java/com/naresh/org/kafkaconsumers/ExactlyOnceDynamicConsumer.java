@@ -15,27 +15,27 @@ public class ExactlyOnceDynamicConsumer {
 
         System.out.println("Starting ManualOffsetGuaranteedExactlyOnceReadingDynamicallyBalancedPartitionConsumer ...");
 
-        readMessages();
+        readMessages(str[0]);
 
     }
 
     /**
      */
-    private static void readMessages() throws InterruptedException {
+    private static void readMessages(String topic) throws InterruptedException {
 
         KafkaConsumer<String, String> consumer = createConsumer();
 
         // Manually controlling offset but register consumer to topics to get dynamically assigned partitions.
         // Inside MyConsumerRebalancerListener use consumer.seek(topicPartition,offset) to control offset
 
-        consumer.subscribe(Arrays.asList("normal-topic"), new MyConsumerRebalancerListener(consumer));
+        consumer.subscribe(Arrays.asList(topic), new MyConsumerRebalancerListener(consumer));
 
         processRecords(consumer);
     }
 
     private static KafkaConsumer<String, String> createConsumer() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "quickstart.cloudera:9092,quickstart.cloudera:9093,quickstart.cloudera:9094");
         String consumeGroup = "cg3";
 
         props.put("group.id", consumeGroup);

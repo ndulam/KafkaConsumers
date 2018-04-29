@@ -38,7 +38,7 @@ public class DataCenterSensorProducer
 		Geo geo;
 		DCSensor dsc;
 		Properties props = new Properties();
-		props.put("bootstrap.servers", "quickstart.cloudera:9092");
+		props.put("bootstrap.servers", "quickstart.cloudera:9092,quickstart.cloudera:9093,quickstart.cloudera:9094");
 		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.ByteArraySerializer");
 		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.connect.json.JsonSerializer");
 		props.put("acks", "all");
