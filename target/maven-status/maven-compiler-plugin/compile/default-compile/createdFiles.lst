@@ -1,0 +1,7 @@
+com\naresh\org\kafkaconsumers\DataCenterSensorProducer.class
+com\naresh\org\kafkaconsumers\UserActivity.class
+com\naresh\org\kafkaconsumers\KafkaCarProducer.class
+com\naresh\org\UserActivityProducer.class
+com\naresh\org\kafkaconsumers\DCSensor.class
+com\naresh\org\kafkaconsumers\Geo.class
+com\naresh\org\kafkaconsumers\Sensor.class
